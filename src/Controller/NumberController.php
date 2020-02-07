@@ -59,7 +59,12 @@ class NumberController extends CoreEntityController {
          * otherwise return true
          */
 
-        $oArticle->custom_art_nr = '01-2344243';
+        $sArtNrPrefix = CoreEntityController::$aGlobalSettings['article-number-prefix'];
+        $iCurrentNumber = CoreEntityController::$aGlobalSettings['article-number-current']+1;
+        CoreEntityController::$aGlobalSettings['article-number-current'] = $iCurrentNumber;
+        CoreEntityController::$aCoreTables['settings']->update(['settings_value'=>$iCurrentNumber],['settings_key'=>'article-number-current']);
+
+        $oArticle->custom_art_nr = $sArtNrPrefix.$iCurrentNumber;
 
         return $oArticle;
     }
