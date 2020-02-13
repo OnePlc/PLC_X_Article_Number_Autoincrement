@@ -2,14 +2,14 @@
   "name": "oneplace/oneplace-article-number-autoincrement",
   "description": "onePlace Article Number Generator Plugin. Simple Autoincrement",
   "type": "oneplace-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "BSD-3-Clause",
   "keywords": [
     "laminas",
     "mvc",
     "oneplace-module",
     "oneplace",
-    "skeleton",
+    "autoincrement",
     "framework"
   ],
   "require-dev": {

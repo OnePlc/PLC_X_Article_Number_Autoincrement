@@ -40,7 +40,7 @@ class NumberController extends CoreEntityController {
      */
     public function __construct(AdapterInterface $oDbAdapter,ArticleTable $oTableGateway,$oServiceManager) {
         $this->oTableGateway = $oTableGateway;
-        $this->sSingleForm = 'worktime-single';
+        $this->sSingleForm = 'article-single';
         parent::__construct($oDbAdapter,$oTableGateway,$oServiceManager);
 
         if($oTableGateway) {
