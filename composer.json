@@ -9,7 +9,7 @@
     "mvc",
     "oneplace-module",
     "oneplace",
-    "skeleton",
+    "autoincrement",
     "framework"
   ],
   "require-dev": {
