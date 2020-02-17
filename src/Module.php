@@ -13,14 +13,14 @@
  * @since 1.0.0
  */
 
-namespace OnePlace\Article\Number;
+namespace OnePlace\Article\Number\Autoincrement;
 
 use Application\Controller\CoreEntityController;
 use Laminas\Mvc\MvcEvent;
 use Laminas\EventManager\EventInterface as Event;
 use Laminas\ModuleManager\ModuleManager;
 use Laminas\Db\Adapter\AdapterInterface;
-use OnePlace\Article\Number\Controller\NumberController;
+use OnePlace\Article\Number\Autoincrement\Controller\NumberController;
 
 class Module {
     /**
@@ -28,7 +28,7 @@ class Module {
      *
      * @since 1.0.0
      */
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.1';
 
     /**
      * Load module config file
@@ -64,6 +64,17 @@ class Module {
                     $tableGateway = $container->get(\OnePlace\Article\Model\ArticleTable::class);
 
                     return new Controller\NumberController(
+                        $oDbAdapter,
+                        $tableGateway,
+                        $container
+                    );
+                },
+                # Plugin Install Controller
+                Controller\InstallController::class => function($container) {
+                    $oDbAdapter = $container->get(AdapterInterface::class);
+                    $tableGateway = $container->get(\OnePlace\Article\Model\ArticleTable::class);
+
+                    return new Controller\InstallController(
                         $oDbAdapter,
                         $tableGateway,
                         $container

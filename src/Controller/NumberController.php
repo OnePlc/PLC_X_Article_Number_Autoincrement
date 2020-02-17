@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-namespace OnePlace\Article\Number\Controller;
+namespace OnePlace\Article\Number\Autoincrement\Controller;
 
 use Application\Controller\CoreEntityController;
 use Application\Model\CoreEntityModel;
